@@ -13,7 +13,7 @@ ogrenciler.remove(silinenOgrenci)
 # kullanıcının girdiği 2 öğrenciyi listemize ekleyen bir fonksiyon yaptık
 
 
-def birdenFazlaOgrenciEkle():
+def ogrenciEkle():
     ogrenci1 = input("Eklemek istediğiniz öğrencinin adı : ")
     ogrenci2 = input("Eklemek istediğiniz öğrencinin adı : ")
     ogrenciler.extend([ogrenci1, ogrenci2])
@@ -44,5 +44,5 @@ def ogrenciNumarasıOgren():
 print(ogrenciler)
 ogrenciNumarasıOgren()
 listeGoruntule()
-birdenFazlaOgrenciEkle()
+ogrenciEkle()
 print(ogrenciler)
