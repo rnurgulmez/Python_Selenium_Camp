@@ -5,7 +5,7 @@ ogrenciler = ["Ayşe Bahar", "Ahmet Yılmaz", "Esra Genç", "Ali Öz"]
 yeniOgrenci1 = input("Lütfen eklemek istediğini öğrencinin adını giriniz : ")
 ogrenciler.append(yeniOgrenci1)
 
-# listeden kullanıcının istediği bir nesneyi kaldırdık
+# listeden kullanıcının istediği bir elemanı kaldırdık
 silinenOgrenci = input(
     "Lütfen kaldırmak istediğiniz öğrencinin adını giriniz : ")
 ogrenciler.remove(silinenOgrenci)
