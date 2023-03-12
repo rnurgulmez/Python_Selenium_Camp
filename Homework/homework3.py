@@ -42,7 +42,6 @@ def ogrenciNumarasıOgren():
 
 # fonksiyonlarımızı çağırdığımız alan
 print(ogrenciler)
-ogrenciSil()
 ogrenciNumarasıOgren()
 listeGoruntule()
 birdenFazlaOgrenciEkle()
