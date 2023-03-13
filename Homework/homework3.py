@@ -1,48 +1,62 @@
-# liste oluşturduk
-ogrenciler = ["Ayşe Bahar", "Ahmet Yılmaz", "Esra Genç", "Ali Öz"]
+students = ["ahmet", "mehmet", "ali", "veli", "ayşe"]
+print(students)
 
-# listemize kullanıcıdan aldığımız yeni bir eleman girdik
-yeniOgrenci1 = input("Lütfen eklemek istediğini öğrencinin adını giriniz : ")
-ogrenciler.append(yeniOgrenci1)
+print("**********************")
 
-# listeden kullanıcının istediği bir elemanı kaldırdık
-silinenOgrenci = input(
-    "Lütfen kaldırmak istediğiniz öğrencinin adını giriniz : ")
-ogrenciler.remove(silinenOgrenci)
+# listeye kullanıcının girdiği ismi ekledik
+newStudent = input("Eklemek istediğiniz öğrencinin adını giriniz : ")
+students.append(newStudent)
+print(students)
 
-# kullanıcının girdiği 2 öğrenciyi listemize ekleyen bir fonksiyon yaptık
+print("**********************")
 
+# listeden kaldırılmak istenen ismi kaldırdık
+removeStudent = input("Kaldırmak istediğiniz öğrencinin adını giriniz : ")
+students.remove(removeStudent)
+print(students)
 
-def ogrenciEkle():
-    ogrenci1 = input("Eklemek istediğiniz öğrencinin adı : ")
-    ogrenci2 = input("Eklemek istediğiniz öğrencinin adı : ")
-    ogrenciler.extend([ogrenci1, ogrenci2])
-    return ogrenciler
+print("**********************")
 
-# listemizdeki değerleri tek tek görüntüleyen bir fonksiyon yazdık
+# listeye birden fazla öğrenci eklemek
+number = int(input("Kaç adet öğrenci eklemek istiyorsunuz? :"))
+i = 0
+while i < number:
+    newStudent1 = input("Eklemek istediğiniz öğrencinin adını giriniz :")
+    i += 1
+    students.extend([newStudent1])
+print(students)
 
+print("**********************")
 
-def listeGoruntule():
-    for i in range(len(ogrenciler)):
-        print(ogrenciler[i])
-        return ogrenciler
-
-# index numaralarını öğrenci numarası olarak kabul edip öğrenci adlarını ve numaralarını aynı anda aldık.
-
-
-def ogrenciNumarasıOgren():
-    i = 0
-    while i < len(ogrenciler):
-        print(f"{ogrenciler[i]},{ogrenciler.index(ogrenciler[i])}")
-        i += 1
-        return ogrenciler
-
-# listeden birden fazla öğrenci silen fonksiyon döngü kullanılarak?? (in progress:D)
+# listedeki tüm öğrencileri tek tek ekrana yazdıran fonksiyon
 
 
-# fonksiyonlarımızı çağırdığımız alan
-print(ogrenciler)
-ogrenciNumarasıOgren()
-listeGoruntule()
-ogrenciEkle()
-print(ogrenciler)
+def showList():
+    for student in students:
+        print(student)
+
+
+# fonksiyonu çağırdık
+showList()
+
+print("**********************")
+
+# istenilen öğrencini öğrenci numarasını(indexi öğrenci numarası kabul ederek) öğrenmemizi sağlayan fonksiyon
+
+
+def showStudentNo():
+
+    studentName = input(
+        "Numarasını öğrenmek istediğiniz öğrencinin adını giriniz : ")
+    for student in students:
+        if studentName == student:
+            print(
+                f"{student} adlı öğrencinin numarası {students.index(student)}")
+
+
+# fonksiyonu çağırdık
+showStudentNo()
+
+print("**********************")
+
+# birden fazla öğrenciyi silmeyi mümkün kılan fonksiyon sorunu henüz yapamadım :(
