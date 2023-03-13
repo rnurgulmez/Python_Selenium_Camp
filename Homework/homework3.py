@@ -59,4 +59,23 @@ showStudentNo()
 
 print("**********************")
 
-# birden fazla öğrenciyi silmeyi mümkün kılan fonksiyon sorunu henüz yapamadım :(
+# birden fazla öğrenciyi silmeyi mümkün kılan fonksiyon
+
+
+def removeStudents():
+    number = int(input("Kaç kişiyi silmek istersiniz? :"))
+    newList = []
+    i = 0
+    while i < number:
+        removedStudent = input("Silinmesini istediğiniz öğrencinin adı : ")
+        i += 1
+        newList.append(removedStudent)
+
+        for student in students:
+            if student in newList:
+                students.remove(student)
+    print(students)
+
+
+# fonksiyonu çağırdık
+removeStudents()
