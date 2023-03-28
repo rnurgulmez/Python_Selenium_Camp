@@ -1,5 +1,9 @@
 ### PyTest'deki Dekoratörler
-
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
 <dl>
 <dt> _Dekoratör nedir ?_  <dt>
 <dd> Python'da dekoratörler @decorator_name syntaxi ile ifade edilen islevsel ozelliklerdir. Class veya function yapilarinin hemen uzerine yerlestirilir.
@@ -23,3 +27,5 @@ Pytest, bir Python test çerçevesidir ve test yazarken kullanabileceğiniz bir 
 
 * @pytest.mark.timeout: Bu dekoratör, bir testin belirli bir sürede tamamlanmasını sağlar. 
   Eğer test belirli bir sürede tamamlanamazsa, test hata verir ve başarısız olur.
+</body>
+</html>
