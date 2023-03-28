@@ -1,8 +1,11 @@
 ### PyTest'deki Dekoratörler
 
-_Dekoratör nedir ?_ 
-Python'da dekoratörler @decorator_name syntaxi ile ifade edilen islevsel ozelliklerdir. Class veya function yapilarinin hemen uzerine yerlestirilir.
+<dl>
+<dt> _Dekoratör nedir ?_  <dt>
+<dd> Python'da dekoratörler @decorator_name syntaxi ile ifade edilen islevsel ozelliklerdir. Class veya function yapilarinin hemen uzerine yerlestirilir.
 Dekoratörler ilgili fonksiyon veya sinifin islevini degistirmeden davranisini degistirir veya ek ozellikler ekler.
+<dd>
+<dl>
 
 Pytest, bir Python test çerçevesidir ve test yazarken kullanabileceğiniz bir dizi dekoratöre sahiptir. Bu dekoratörler, testleri yürütürken nasıl davranacaklarını belirlemek için kullanılır. Bazı yaygın pytest dekoratörleri şunlardır:
 
