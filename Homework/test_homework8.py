@@ -140,4 +140,32 @@ class Test_sauce_Test:
         self.waitForElementVisible((By.CLASS_NAME, "inventory_item"))
         liststyle = self.driver.find_element(By.ID,"//*[@id='header_container']/div[2]/div/span/select")
 
+        # parametrize dekoratoru ile urunlerin tum yani 4 farkli siralanma sekline gore dogru bir sekilde siralanma durumu
+    @pytest.mark.parametrize("sorting_option", ["az", "za", "lohi", "hilo"])
+    def test_product_sorting(self, sorting_option):
+        self.waitForElementVisible((By.ID, "user-name"))
+        usernameInput = self.driver.find_element(By.ID, "user-name")
+        usernameInput.send_keys("standard_user")
+        self.waitForElementVisible((By.ID, "password"))
+        passwordInput = self.driver.find_element(By.ID, "password")
+        passwordInput.send_keys("secret_sauce")
+        loginBtn = self.driver.find_element(By.ID, "login-button")
+        loginBtn.click()
+        self.sortingDropdown = self.driver.find_element(By.XPATH, "//select[@class='product_sort_container']")
+        self.sortingDropdown.click()
+        sortingOptionXpath = f"//option[text()='{sorting_option}']"
+        WebDriverWait(self.driver, 10).until(EC.presence_of_element_located((By.XPATH, sortingOptionXpath)))
+        sortingOption = self.driver.find_element(By.XPATH, sortingOptionXpath)
+        sortingOption.click()
+        time.sleep(2) # waiting for sorting to complete
+        products = self.driver.find_elements(By.XPATH, "//div[@class='inventory_item_name']")
+        product_names = [p.text for p in products]
+        if sorting_option == "az":
+            assert product_names == sorted(product_names)
+        elif sorting_option == "za":
+            assert product_names == sorted(product_names, reverse=True)
+        elif sorting_option == "lohi":
+            assert product_names == sorted(product_names, key=lambda s: s.lower())
+        elif sorting_option == "hilo":
+            assert product_names == sorted(product_names, key=lambda s: s.lower(), reverse=True)
 
